@@ -1,8 +1,14 @@
 body{
   background-color: brown;
 }
+img{
+  max-width: 100%;
+  max-height: 100;
+  object-fit: contain;
+}
 .topnav{
     width: 100%;
+    height: 20px;
     position: fixed;
     background-color: black;
     padding-bottom: 30px;
@@ -10,10 +16,17 @@ body{
     left: 0;
     border: 1px solid red;
 }
-.content-wrapper{
-  position: static;
-  margin-left: 0;
-  size: 0px
+.row{
+  position: relative;
+  margin-top: 60px;
+}
+.col-1{
+  width: 58%;
+  float: left;
+}
+.col-2{
+  width: 42%;
+  float: left;
 }
 a{
   color: white;
