@@ -1,4 +1,23 @@
+body{
+  background-color: brown;
+}
+.topnav{
+    width: 100%;
+    position: fixed;
+    background-color: black;
+    padding-bottom: 30px;
+    top: 0;
+    left: 0;
+    border: 1px solid red;
+}
+.content-wrapper{
+  position: static;
+  margin-left: 0;
+  size: 0px
+}
 a{
-    margin-left: 50px;
-    border: red 2px solid;
+  color: white;
+}
+a:hover{
+  background-color: red;
 }

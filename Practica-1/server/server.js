@@ -7,6 +7,11 @@ http.createServer((req, resp) => {
   url = ('.' + req.url);
   console.log(url);
   console.log(mime.lookup(url));
+
+  if (url == './') {
+    url = './tienda.html'
+  }
+
   fs.readFile(url, (err, resource) => {
     if (err) {
       resp.writeHead(404);
