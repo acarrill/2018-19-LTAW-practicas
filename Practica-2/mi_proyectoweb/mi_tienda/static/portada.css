@@ -15,6 +15,7 @@ img{
     top: 0;
     left: 0;
     border: 1px solid red;
+    z-index: 1;
 }
 .row{
   position: relative;
@@ -24,9 +25,10 @@ img{
   width: 58%;
   float: left;
 }
-.col-item-1{
-  width: 240px;
+.col-item{
+  width: 25%;
   float: left;
+  text-align: center;
 }
 .col-2{
   width: 42%;
