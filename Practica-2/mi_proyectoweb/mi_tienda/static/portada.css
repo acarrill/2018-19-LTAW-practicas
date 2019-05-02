@@ -3,7 +3,7 @@ body{
 }
 img{
   max-width: 100%;
-  max-height: 100;
+  max-height: 100%;
   object-fit: contain;
 }
 .topnav{
@@ -18,25 +18,34 @@ img{
     z-index: 1;
 }
 .row{
-  position: relative;
   margin-top: 60px;
+  height: 350px;
 }
 .col-1{
   width: 58%;
+  height: 100%;
   float: left;
 }
 .col-item{
-  width: 25%;
+  width: 24%;
   float: left;
   text-align: center;
+  background: black;
 }
 .col-2{
   width: 42%;
+  height: 100%;
   float: left;
 }
 a{
   color: white;
+  display: block;
+  box-sizing: border-box;
 }
 a:hover{
   background-color: red;
+}
+#item-text{
+  padding-top: 0.2rem;
+  padding-bottom: 0.5rem;
 }
