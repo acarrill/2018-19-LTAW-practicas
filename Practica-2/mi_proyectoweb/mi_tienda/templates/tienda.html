@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -20,7 +21,7 @@
         </div>
         <div class="menu-item">
           <ul>
-            <form class="search-form" action="index.html" method="get">
+            <form class="search-form" action="search.html" method="get">
                 <input type="text" name="" value="" placeholder="search">
             </form>
           </ul>
@@ -29,33 +30,14 @@
     </div>
     <div class="row">
       <div class="col-1">
-        <div class="col-item">
-          <a id=item-text href="#">{{product}}-{{price}}</a>
-          <img src="static/NewOrder.png" alt="">
-          <a id=item-text href="#">Buy</a>
-        </div>
-        <div class="col-item">
-          <a id=item-text href="#">{{product}}-{{price}}</a>
-          <img src="static/PinkFloyd.jpeg" alt="">
-          <a id=item-text href="#">Buy</a>
-        </div>
-        <div class="col-item">
-          <a id=item-text href="#">{{product}}-{{price}}</a>
-          <img src="static/KingLeon.jpeg" alt="">
-          <a id=item-text href="#">Buy</a>
-        </div>
-        <div class="col-item">
-          <a id=item-text href="#">{{product}}-{{price}}</a>
-          <img src="static/kingCrimson.jpeg" alt="">
-          <a id=item-text href="#">Buy</a>
-        </div>
+        {% for album in albums %}
+          <div class="col-item">
+            <a id=item-text href="#">{{album.name}}-{{album.price}}</a>
+            <img src={{album.img}} alt="">
+            <a id=item-text href="#">Buy</a>
+          </div>
+        {% endfor %}
       </div>
-      <div class="col-2">
-        <img src="static/TotalEclipse.jpg" alt="">
-      </div>
-    </div>
-
-    <img src="static/Rumours.jpeg" alt="">
     <tr>
       <th>Productos<th>
         <th>Contacto<th>

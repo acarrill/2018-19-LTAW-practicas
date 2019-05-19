@@ -7,6 +7,8 @@ from mi_tienda.models import Album
 # Create your views here.
 
 def home_view (request):
-    p1 = Album(name='Wish You Were Here')
-    print(p1)
-    return render(request, 'tienda.html', {'product':p1.name, 'price':p1.price})
+    albums = Album.objects.all()
+    return render(request, 'tienda.html', {'albums': albums})
+
+def search_try (request):
+    return render(request, 'search.html', {})
