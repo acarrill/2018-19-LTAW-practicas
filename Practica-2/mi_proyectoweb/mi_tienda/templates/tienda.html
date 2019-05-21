@@ -22,7 +22,7 @@
         <div class="menu-item">
           <ul>
             <form class="search-form" action="search.html" method="get">
-                <input type="text" name="" value="" placeholder="search">
+                <input type="text" name="search-box" value="" placeholder="search">
             </form>
           </ul>
         </div>
@@ -32,9 +32,11 @@
       <div class="col-1">
         {% for album in albums %}
           <div class="col-item">
-            <a id=item-text href="#">{{album.name}}-{{album.price}}</a>
-            <img src={{album.img}} alt="">
-            <a id=item-text href="#">Buy</a>
+            <a href="{{album.name}}">
+              <p id=item-text>{{album.author}} {{album.name}}</p>
+              <img src={{album.img}} alt="">
+              <p id=item-text>Buy <b>{{album.price}}$</b></p>
+            </a>
           </div>
         {% endfor %}
       </div>

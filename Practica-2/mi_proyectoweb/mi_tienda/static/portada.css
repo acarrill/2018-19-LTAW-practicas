@@ -7,13 +7,13 @@ img{
   object-fit: contain;
 }
 .topnav{
-  width: 100%;
+  width: calc(100% - 6px);
   height: 50px;
   position: fixed;
   background-color: black;
   top: 0;
   left: 0;
-  border: 1px solid red;
+  border: 3px solid grey;
   z-index: 1;
   display: table;
   table-layout: auto;
@@ -40,9 +40,10 @@ img{
   width: 58%;
   position: relative;
   float: left;
+  border: 3px solid grey;
 }
 .col-item{
-  width: 24%;
+  width: 25%;
   float: left;
   text-align: center;
   background: black;
@@ -58,14 +59,15 @@ img{
   text-align: center;
 }
 a{
-  width: auto;
-  height: auto;
   color: white;
+  text-decoration: none;
 }
 a:hover{
   background-color: red;
 }
 #item-text{
-  padding-top: 0.2rem;
-  padding-bottom: 0.5rem;
+  height: 35px;
+}
+#item-text:hover{
+  background-color: red;
 }
