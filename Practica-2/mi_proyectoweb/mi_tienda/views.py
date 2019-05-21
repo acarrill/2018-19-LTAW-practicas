@@ -18,5 +18,15 @@ def search_try (request):
     return render(request, 'search.html', {})
 
 def album_view (request, album_name):
-    
-    return render(request, 'album_page.html', {})
+    arrayWords = album_name.split("_")
+    album_name = ""
+    # We must format our album name first
+    for word in arrayWords:
+        if album_name == "":
+            album_name = word
+        else:
+            album_name = album_name + ' ' + word
+
+    album = Album.objects.get(name=album_name)
+    print(album.price)
+    return render(request, 'album_page.html', {'album': album})

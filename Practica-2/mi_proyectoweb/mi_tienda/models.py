@@ -9,7 +9,8 @@ class Album(models.Model):
     author = models.CharField(max_length=200)
     stock = models.IntegerField()
     price = models.FloatField()
-    img = models.CharField(max_length=200, default="static/PinkFloyd.jpeg")
+    img = models.CharField(max_length=200, default="PinkFloyd.jpeg")
+    path = models.CharField(max_length=200, default="templates/search")
 
     def __str__(self):
         return self.name

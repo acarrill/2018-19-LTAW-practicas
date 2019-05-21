@@ -31,13 +31,13 @@
   </div>
 
   <div class="row">
-    <div class="col-1">
-      <div class="col-item">
+    <a href="#">
+      <div class="col-item" style="border: 3px solid grey;">
         <p id=item-text>{{album.author}} {{album.name}}</p>
-        <img src={{album.img}} alt="">
+        <img src="{% static album.img %}" alt="">
         <p id=item-text>Buy <b>{{album.price}}$</b></p>
       </div>
-  </div>
+    </a>
 
   </body>
 </html>

@@ -32,9 +32,9 @@
       <div class="col-1">
         {% for album in albums %}
           <div class="col-item">
-            <a href="{{album.name}}">
+            <a href="{{album.path}}">
               <p id=item-text>{{album.author}} {{album.name}}</p>
-              <img src={{album.img}} alt="">
+              <img src="{% static album.img %}" alt="">
               <p id=item-text>Buy <b>{{album.price}}$</b></p>
             </a>
           </div>
