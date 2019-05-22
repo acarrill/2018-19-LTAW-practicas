@@ -22,11 +22,16 @@
       </div>
       <div class="menu-item">
         <ul>
-          <form class="search-form" action="search" method="get">
+          <form class="search-form" action="http://localhost:8000/search" method="get">
               <input type="text" name="search-box" value="" placeholder="search">
           </form>
         </ul>
       </div>
+    </div>
+    <div class="menu-item">
+      <a href="http://localhost:8000/">
+        <img src="{% static 'home.png' %}" alt="">
+      </a>
     </div>
   </div>
 
@@ -41,10 +46,12 @@
       </div>
     {% endfor %}
   </div>
+
   {% if not results %}
     <div class="error-mssg">
       <p>Content Not Found</p>
     </div>
   {% endif %}
+
   </body>
 </html>
