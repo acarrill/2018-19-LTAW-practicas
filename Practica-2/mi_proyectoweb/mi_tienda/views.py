@@ -13,9 +13,9 @@ def home_view (request):
 def search_try (request):
     if request.method == 'GET':
         search_query = request.GET.get('search-box', None)
-
-
-    return render(request, 'search.html', {})
+        results = (Album.objects.filter(name__icontains=search_query) |
+                    Album.objects.filter(author__icontains=search_query))
+    return render(request, 'search.html', {'results':results})
 
 def album_view (request, album_name):
     arrayWords = album_name.split("_")

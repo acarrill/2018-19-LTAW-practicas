@@ -30,9 +30,21 @@
     </div>
   </div>
 
-  <div class="error-mssg">
-    <p>Content Not Found</p>
+  <div class="row">
+    {% for result in results %}
+      <div class="col-item" style="border: 3px solid grey;">
+        <a href="{{result.path}}">
+          <p id=item-text>{{result.author}} {{result.name}}</p>
+          <img src="{% static result.img %}" alt="">
+          <p id=item-text>Buy <b>{{result.price}}$</b></p>
+        </a>
+      </div>
+    {% endfor %}
   </div>
-
+  {% if not results %}
+    <div class="error-mssg">
+      <p>Content Not Found</p>
+    </div>
+  {% endif %}
   </body>
 </html>
