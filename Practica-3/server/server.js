@@ -12,7 +12,7 @@ http.createServer((req, resp) => {
   urlArray = url.split('.');
   extension = urlArray[urlArray.length-1];
   console.log(extension);
-  
+
   fs.readFile(url, (err, resource) => {
     if (err) {
       resp.writeHead(404);
