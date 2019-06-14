@@ -3,7 +3,9 @@ from __future__ import unicode_literals
 
 from django.shortcuts import render
 from mi_tienda.models import Album
-
+from mi_tienda.models import Order
+from mi_tienda.forms import OrderForm
+from django.http import HttpResponseRedirect
 # Create your views here.
 
 def home_view (request):
@@ -30,3 +32,18 @@ def album_view (request, album_name):
     album = Album.objects.get(name=album_name)
     print(album.price)
     return render(request, 'album_page.html', {'album': album})
+
+def order_request (request):
+    print('hi')
+    form = OrderForm()
+    if request.method == 'POST':
+        form = OrderForm(request.POST)
+        print('post')
+        if form.is_valid():
+            cd = form.cleaned_data
+            newOrder = Order(userName=cd['userName'], email=cd['email'],
+                            product=cd['product'], numProducts=cd['numProducts'])
+            newOrder.save()
+            return render(request, 'form.html', {'order': newOrder})
+
+    return render(request, 'form.html', {'form': form})

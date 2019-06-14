@@ -14,3 +14,9 @@ class Album(models.Model):
 
     def __str__(self):
         return self.name
+
+class Order(models.Model):
+    userName = models.CharField(max_length=100)
+    email = models.CharField(max_length=100)
+    product = models.CharField(max_length=100)
+    numProducts = models.IntegerField()

@@ -15,20 +15,20 @@ img{
   left: 0;
   border: 3px solid grey;
   z-index: 1;
-  display: table;
+  display: inline-table;
   table-layout: auto;
   font-family: 'Roboto', sans-serif;
 }
 .menu-col{
-  width: 60%;
+  width: 100%;
   height: 100%;
   position: relative;
 }
 .menu-item{
-  width: 33%;
+  width: 20%;
   height: 50px;
-  position: relative;
   display: table-cell;
+  position: relative;
   box-sizing: border-box;
   vertical-align: middle;
 }
