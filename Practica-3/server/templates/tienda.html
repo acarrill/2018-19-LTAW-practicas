@@ -3,9 +3,11 @@
   <head>
     <link rel="stylesheet" type="text/css" href="static/portada.css">
     <meta charset="utf-8">
+    <script type="text/javascript" src="static/cart.js">
+    </script>
     <title></title>
   </head>
-  <body>
+  <body onload="test()">
     <div class="topnav">
       <div class="menu-col">
         <div class="menu-item">
@@ -27,7 +29,7 @@
         </div>
       </div>
       <div class="menu-item" style="left:80px;">
-        <a href="/form">Make an order</a>
+        <a href="./templates/form.html">Make an order</a>
       </div>
       <div class="menu-item">
         <a href="./">
@@ -39,33 +41,39 @@
     <div class="row">
       <div class="col-1">
           <div class="col-item">
-            <a href="template/pink-floyd.html">
+            <a href="./templates/pink-floyd.html">
               <p id=item-text>Pink Floyd Wish You Were Here </p>
               <img src="static/PinkFloyd.jpeg" alt="">
               <p id=item-text>Buy <b>12.0$</b></p>
             </a>
           </div>
           <div class="col-item">
-            <a href="template/pink-floyd.html">
+            <a href="templates/pink-floyd.html">
               <p id=item-text>Pink Floyd Wish You Were Here </p>
               <img src="static/PinkFloyd.jpeg" alt="">
               <p id=item-text>Buy <b>12.0$</b></p>
             </a>
           </div>
           <div class="col-item">
-            <a href="template/pink-floyd.html">
+            <a href="templates/pink-floyd.html">
               <p id=item-text>Pink Floyd Wish You Were Here </p>
               <img src="static/PinkFloyd.jpeg" alt="">
               <p id=item-text>Buy <b>12.0$</b></p>
             </a>
           </div>
           <div class="col-item">
-            <a href="template/pink-floyd.html">
+            <a href="templates/pink-floyd.html">
               <p id=item-text>Pink Floyd Wish You Were Here </p>
               <img src="static/PinkFloyd.jpeg" alt="">
               <p id=item-text>Buy <b>12.0$</b></p>
             </a>
           </div>
       </div>
+      <!-- <div class="error-mssg">
+        <p>Pls register yourself to be able to buy</p>
+        <a href="/register">
+          <button type="button" name="button">Register!!!!</button>
+        </a>
+      </div> -->
   </body>
 </html>

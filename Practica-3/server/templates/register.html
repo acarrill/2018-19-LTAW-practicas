@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-  <link rel="stylesheet" type="text/css" href="{% static 'portada.css' %}">
+  <link rel="stylesheet" type="text/css" href="/static/portada.css">
   <meta charset="utf-8">
   <title></title>
 </head>
@@ -37,21 +37,12 @@
     </div>
   </div>
 
-  <div class="row">
-      <div class="col-item" style="border: 3px solid grey;">
-        <a href="{{result.path}}">
-          <p id=item-text>{{result.author}} {{result.name}}</p>
-          <img src="{% static result.img %}" alt="">
-          <p id=item-text>Buy <b>{{result.price}}$</b></p>
-        </a>
-      </div>
+  <div class="error-mssg">
+    <p>Pls login yourself to enter in page and buy</p>
+    <a href="/login">
+      <button type="button" name="button">Login</button>
+    </a>
   </div>
-
-  {% if not results %}
-    <div class="error-mssg">
-      <p>Content Not Found</p>
-    </div>
-  {% endif %}
 
   </body>
 </html>
