@@ -25,10 +25,38 @@ http.createServer((req, res) => {
   }
 
   if (url == './login'){
-    console.log('logeandio');
     res.setHeader('Set-Cookie', 'user=piñachu');
     url = './templates/tienda.html';
     extension = 'html';
+  }
+
+  if (extension == "add") { //METER EN function
+    // FDKGJDFOGH HOSTIAS PUTA ENCAPSULA
+    let product = urlArray[urlArray.length-2]
+    console.log(product);
+    switch (product) {
+      case '/PinkFloyd':
+        res.setHeader('Set-Cookie', 'product1=PinkFloyd');
+        url = './templates/tienda.html';
+        extension = 'html';
+        break;
+      case '/NewOrder':
+        res.setHeader('Set-Cookie', 'product2=NewOrder');
+        url = './templates/tienda.html';
+        extension = 'html';
+        break;
+      case '/KingLeon':
+        res.setHeader('Set-Cookie', 'product3=KingLeon');
+        url = './templates/tienda.html';
+        extension = 'html';
+        break;
+      case '/KingCrimson':
+        res.setHeader('Set-Cookie', 'product4=KingCrimson');
+        url = './templates/tienda.html';
+        extension = 'html';
+        break;
+      default:
+    }
   }
 
   fs.readFile(url, (err, resource) => {
@@ -37,7 +65,6 @@ http.createServer((req, res) => {
       res.end('Content not found')
     }else{
       if (extension == 'html') {
-        console.log('me bloqueo');
         res.writeHead(200, {'Content-Type': 'text/html'});
         res.end(resource);
       }
