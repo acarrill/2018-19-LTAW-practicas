@@ -6,17 +6,15 @@ http.createServer((req, res) => {
   url = ('.' + req.url);
   let cookies = req.headers.cookie;
   console.log(cookies);
-
   if (url == './') {
     url = './templates/tienda.html'
   }
   console.log(url);
-  console.log(cookies);
+  // console.log(cookies);
   urlArray = url.split('.');
   extension = urlArray[urlArray.length-1];
 
   if (extension == 'html' && url != "./login") {
-    console.log('que pacha');
     if (!cookies) {
       url = "./templates/register.html";
     }else if (cookies && !cookies.includes('user')) {
@@ -33,7 +31,6 @@ http.createServer((req, res) => {
   if (extension == "add") { //METER EN function
     // FDKGJDFOGH HOSTIAS PUTA ENCAPSULA
     let product = urlArray[urlArray.length-2]
-    console.log(product);
     switch (product) {
       case '/PinkFloyd':
         res.setHeader('Set-Cookie', 'product1=PinkFloyd');
