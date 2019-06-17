@@ -21,3 +21,7 @@ function test() {
     document.getElementsByClassName('error-mssg')[0].style.display = "block";
   }
 }
+function search() {
+  let searchBar = document.getElementsById("search-bar")
+  console.log(searchBar.value);
+}

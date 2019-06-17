@@ -22,7 +22,8 @@ http.createServer((req, res) => {
   }
 
   if (url == './login'){
-    res.setHeader('Set-Cookie', 'user=piñachu');
+    const User = Math.floor((Math.random()*1000) + 1)
+    res.setHeader('Set-Cookie', 'user='+User);
     url = './templates/tienda.html';
     extension = 'html';
   }
@@ -102,7 +103,7 @@ http.createServer((req, res) => {
               <a href="./templates/compra.html">Comprar</a>
             </div>
             <div class="menu-item">
-              <a href="./">
+              <a href="http://localhost:8000/">
                 <img src="http://localhost:8000/static/home.png" alt="">
               </a>
             </div>
