@@ -22,6 +22,14 @@ function test() {
   }
 }
 function search() {
-  let searchBar = document.getElementsById("search-bar")
-  console.log(searchBar.value);
+  let searchBox = document.getElementById("search-box")
+  console.log(searchBox.value);
+
+  xhhtp.onreadystatechange = () => {
+    if (this.readyState == 4 && this.status == 200) {
+      searchBox.innerText = this.response;
+    }
+  };
+  xhhtp.open("GET", searchBox.value, true)
+  xhttp.send()
 }
