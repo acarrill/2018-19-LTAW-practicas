@@ -33,8 +33,8 @@ function search(event) {
 
     ajax.onreadystatechange = function(){
       if (this.readyState == 4 && this.status == 200) {
-        console.log("this.response");
-        searchBox.innerText = this.response;
+        let response = JSON.parse(this.response);
+        console.log(response);
       }
     };
     ajax.open("GET", "searching="+searchValue, true)

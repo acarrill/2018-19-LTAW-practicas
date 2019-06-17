@@ -143,11 +143,7 @@ http.createServer((req, res) => {
         matches.push(Products[product]);
       }
     }
-    let matchesJSON = `
-    {
-      "Matches": ${matches}
-    }
-    `
+    let matchesJSON = JSON.stringify(matches)
     res.writeHead(200, {"Content-Type": 'application/json'});
     res.end(matchesJSON);
   }
