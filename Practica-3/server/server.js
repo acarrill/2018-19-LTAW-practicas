@@ -133,6 +133,9 @@ http.createServer((req, res) => {
       res.end(content)
     })
   }
+  if (url.includes("searching")) {
+    console.log(url);
+  }
 
   fs.readFile(url, (err, resource) => {
     if (err) {
