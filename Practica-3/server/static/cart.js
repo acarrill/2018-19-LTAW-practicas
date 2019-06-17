@@ -27,12 +27,13 @@ function search(event) {
   const searchValue = searchBox.value;
   const KeyCode = Number(event.keyCode);
 
-  if (KeyCode > 64 && KeyCode < 91) {
+  if (KeyCode > 64 && KeyCode < 91 && searchValue.length >= 2) {
     console.log("AJAX");
     let ajax = new XMLHttpRequest();
 
-    ajax.onreadystatechange = () => {
+    ajax.onreadystatechange = function(){
       if (this.readyState == 4 && this.status == 200) {
+        console.log("this.response");
         searchBox.innerText = this.response;
       }
     };

@@ -3,6 +3,8 @@ var url = require('url');
 var fs = require('fs');
 
 http.createServer((req, res) => {
+  const Products = ["PinkFloyd", "NewOrder", "KingLeon", "KingCrimson"];
+
   url = ('.' + req.url);
   let cookies = req.headers.cookie;
   console.log(cookies);
@@ -134,7 +136,20 @@ http.createServer((req, res) => {
     })
   }
   if (url.includes("searching")) {
-    console.log(url);
+    let searchValue = url.split('=')[1];
+    let matches = [];
+    for (product in Products) { //MAKE IT NO SENSITIVE TO CAPS
+      if (Products[product].includes(searchValue)) {
+        matches.push(Products[product]);
+      }
+    }
+    let matchesJSON = `
+    {
+      "Matches": ${matches}
+    }
+    `
+    res.writeHead(200, {"Content-Type": 'application/json'});
+    res.end(matchesJSON);
   }
 
   fs.readFile(url, (err, resource) => {
