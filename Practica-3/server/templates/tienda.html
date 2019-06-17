@@ -19,10 +19,11 @@
             <a href="#">Productos</a>
           </li>
         </div>
-        <div class="menu-item">
+        <div id="search-bar" class="menu-item">
           <ul>
-            <form id="search-bar" class="search-form" action="search" onkeydown="search(event)" method="get">
+            <form class="search-form" action="search" onkeydown="search(event)" method="get">
                 <input id="search-box" type="text" name="search-box" value="" placeholder="search">
+                <li id="possible-text">Possible results:</li>
             </form>
           </ul>
         </div>

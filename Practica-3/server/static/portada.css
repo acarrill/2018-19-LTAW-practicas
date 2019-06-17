@@ -78,3 +78,11 @@ a:hover{
 #item-text:hover{
   background-color: red;
 }
+#search-bar li{
+  position: relative;
+  list-style: none;
+  background-color: grey;
+}
+#possible-text{
+  display: none;
+}

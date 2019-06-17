@@ -23,7 +23,9 @@ function test() {
 }
 
 function search(event) {
+  let searchBar = document.getElementById("search-bar");
   let searchBox = document.getElementById("search-box");
+  let results = document.getElementById("possible-text")
   const searchValue = searchBox.value;
   const KeyCode = Number(event.keyCode);
 
@@ -33,8 +35,17 @@ function search(event) {
 
     ajax.onreadystatechange = function(){
       if (this.readyState == 4 && this.status == 200) {
+        // if exists old results we remove it
+        if (document.getElementById("search-match") != null) {
+          results.removeChild(document.getElementById("search-match"))
+        }
         let response = JSON.parse(this.response);
-        console.log(response);
+        results.style = "display:block"
+        let li = document.createElement("LI");
+        li.setAttribute("id", "search-match")
+        li.innerText = response;
+        li.style = "color:white"
+        results.appendChild(li);
       }
     };
     ajax.open("GET", "searching="+searchValue, true)
