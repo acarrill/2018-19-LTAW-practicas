@@ -30,7 +30,6 @@ function search(event) {
   const KeyCode = Number(event.keyCode);
 
   if (KeyCode > 64 && KeyCode < 91 && searchValue.length >= 2) {
-    console.log("AJAX");
     let ajax = new XMLHttpRequest();
 
     ajax.onreadystatechange = function(){

@@ -147,6 +147,12 @@ http.createServer((req, res) => {
     res.writeHead(200, {"Content-Type": 'application/json'});
     res.end(matchesJSON);
   }
+  if (url.includes("./searched")) {
+    let productTemplate = url.split("=")[1];
+    url = `./templates/${productTemplate}.html`;
+    extension = "html";
+    console.log(url);
+  }
 
   fs.readFile(url, (err, resource) => {
     if (err) {
@@ -154,6 +160,7 @@ http.createServer((req, res) => {
       res.end('Content not found')
     }else{
       if (extension == 'html') {
+        console.log("Trying...");
         res.writeHead(200, {'Content-Type': 'text/html'});
         res.end(resource);
       }
