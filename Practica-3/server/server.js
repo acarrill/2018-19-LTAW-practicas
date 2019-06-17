@@ -32,7 +32,6 @@ http.createServer((req, res) => {
 
 
   if (extension == "add") { //METER EN function
-    // FDKGJDFOGH HOSTIAS PUTA ENCAPSULA
     let product = urlArray[urlArray.length-2]
     switch (product) {
       case '/PinkFloyd':
