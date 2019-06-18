@@ -3,20 +3,21 @@
   <head>
     <link rel="stylesheet" type="text/css" href="static/portada.css">
     <meta charset="utf-8">
-    <script type="application/javascript" src="static/cart.js"></script>
+    <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+    <script type="application/javascript" src="chat-client.js"></script>
     <title></title>
   </head>
-  <body>
+  <body onload="main()">
     <div class="topnav">
 
     </div>
 
     <div class="row">
         <div class="col-item">
-          <p>Plantilla para mi chat....</p>
+          <p style="color:orange">Welcome to chachi chat</p>
+          <textarea id="display" cols="30" rows="10" readonly>Lorem ipsum dolor.</textarea>
           <input id="msg" autocomplete="off" />
           <button type="button" id="send">SEND</button>
-          <p id="display"></p>
         </div>
       </div>
       <div class="cart-mssg">

@@ -33,8 +33,10 @@ img{
   vertical-align: middle;
 }
 .row{
-  margin-top: 80px;
-  height: 350px;
+  margin-top: 12%;
+  height: 450px;
+  width: 1200px;
+  margin-left: 30%;
 }
 .col-1{
   width: 58%;
@@ -43,10 +45,27 @@ img{
   border: 3px solid grey;
 }
 .col-item{
-  width: 25%;
+  color: white;
+  width: 50%;
+  height: 100%;
   float: left;
   text-align: center;
   background: black;
+  font-size: 18px;
+}
+.col-item textarea{
+  width: 90%;
+  height: 70%;
+}
+.col-item input{
+  float: left;
+  margin-left: 4.5%;
+  width: 50%;
+  height: 10%;
+}
+.col-item button{
+  float: left;
+  height: 12%;
 }
 .col-2{
   width: 42%;

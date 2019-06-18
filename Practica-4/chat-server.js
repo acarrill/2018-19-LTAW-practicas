@@ -35,6 +35,7 @@ io.on('connection', function(socket){
 
    //-- Notificarlo en la consola del servidor
    console.log("Mensaje recibido: " + msg)
+   socket.emit('new_message', msg)
  });
 
 });
