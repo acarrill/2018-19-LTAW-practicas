@@ -37,6 +37,8 @@ io.on('connection', function(socket){
   socket.on('taluego', function(user){
     let serverMssg = `SERVER MESSAGE: ${user} rests in peace`;
     socket.broadcast.emit('new_message', serverMssg);
+    // REMOVE USER FROM users array
+    users.splice(users.indexOf(user),1);
   });
 
   //-- Detectar si se ha recibido un mensaje del cliente
@@ -58,7 +60,11 @@ io.on('connection', function(socket){
       serverMssg = `SERVER MESSAGE: Date: ${date}`;
       break;
      default:
-      socket.broadcast.emit('new_message', User + ": " +msg);
+     if (users.includes(User)) {
+       socket.broadcast.emit('new_message', User + ": " +msg);
+     }else{
+       socket.emit('new_message', "SERVER MESSAGE: U ARE LOGOUT RELOAD THE PAGE AND LOG URSELF");
+     }
    }
    if (serverMssg != "") {
      socket.emit('new_message', serverMssg);
