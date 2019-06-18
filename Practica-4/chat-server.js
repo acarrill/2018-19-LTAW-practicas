@@ -30,19 +30,40 @@ io.on('connection', function(socket){
     users.push(data);
     let serverMssg = `SERVER MESSAGE: ${data} is one of us now!!!`;
     socket.broadcast.emit('new_message', serverMssg);
+    socket.emit('new_message', "SERVER MESSAGE: BIENVENIDO CHAVAL")
   });
 
   //-- Detectar si el usuario se ha desconectado
-  socket.on('disconnect', function(){
-    console.log('--> Usuario Desconectado');
+  socket.on('taluego', function(user){
+    let serverMssg = `SERVER MESSAGE: ${user} rests in peace`;
+    socket.broadcast.emit('new_message', serverMssg);
   });
 
   //-- Detectar si se ha recibido un mensaje del cliente
    socket.on('new_message', msg => {
-
-   //-- Notificarlo en la consola del servidor
-   console.log("Mensaje recibido: " + msg)
-   socket.emit('new_message', msg)
+     //server message if command is used
+   let serverMssg = "";
+   switch (msg) {
+     case "/help":
+      serverMssg = "SERVER MESSAGE: COMMANDS = /list /help /date /hello";
+      break;
+     case "/list":
+      serverMssg = `SERVER MESSAGE: Users = ${users}`;
+      break;
+     case "/hello":
+      serverMssg = "HEY YO  ";
+      break;
+     case "/date":
+      let date = new Date();
+      serverMssg = `SERVER MESSAGE: Date: ${date}`;
+      break;
+     default:
+      socket.broadcast.emit('new_message', msg)
+   }
+   if (serverMssg != "") {
+     socket.emit('new_message', serverMssg);
+   }
  });
+
 
 });

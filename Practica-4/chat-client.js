@@ -13,11 +13,11 @@ function login() {
     tyMssg.style = "display:block";
 
     socket.emit('login', User);
-    main(socket);
+    main(socket, User);
   }
 }
 
-function main(socket) {
+function main(socket, User) {
   console.log("Hola!!!!-------------")
 
 
@@ -31,6 +31,14 @@ function main(socket) {
 
   //-- Caja con el mensaje a enviar
   var msg = document.getElementById("msg")
+
+  // --Boton de irse
+  var logOut = document.getElementById("logout-button")
+  logOut.style = "display: block"
+
+  logOut.onclick = () => {
+    socket.emit('taluego', User)
+  }
 
   //-- Cuando se aprieta el botón de enviar...
   send.onclick = () => {

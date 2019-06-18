@@ -106,3 +106,7 @@ a:hover{
 #possible-text{
   display: none;
 }
+#logout-button{
+  display: none;
+  float: left;
+}
