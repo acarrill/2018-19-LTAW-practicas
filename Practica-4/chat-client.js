@@ -43,7 +43,7 @@ function main(socket, User) {
   //-- Cuando se aprieta el botón de enviar...
   send.onclick = () => {
     //-- Enviar el mensaje, con el evento "new_message"
-    socket.emit('new_message', msg.value);
+    socket.emit('new_message', msg.value, User);
     //-- Lo notificamos en la consola del navegador
     console.log("Mensaje emitido")
   }

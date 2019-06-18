@@ -40,7 +40,7 @@ io.on('connection', function(socket){
   });
 
   //-- Detectar si se ha recibido un mensaje del cliente
-   socket.on('new_message', msg => {
+   socket.on('new_message', (msg, User) => {
      //server message if command is used
    let serverMssg = "";
    switch (msg) {
@@ -58,7 +58,7 @@ io.on('connection', function(socket){
       serverMssg = `SERVER MESSAGE: Date: ${date}`;
       break;
      default:
-      socket.broadcast.emit('new_message', msg)
+      socket.broadcast.emit('new_message', User + ": " +msg);
    }
    if (serverMssg != "") {
      socket.emit('new_message', serverMssg);
