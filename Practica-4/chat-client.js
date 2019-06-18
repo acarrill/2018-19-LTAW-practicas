@@ -1,8 +1,25 @@
-function main() {
-  console.log("Hola!!!!-------------")
-
+function login() {
   //-- Crear el websocket
   var socket = io();
+  let loginTool = document.getElementById('login-tool');
+  let loginInput = document.getElementById('login-input');
+  let loginButton = document.getElementById('login-send');
+  let tyMssg = document.getElementById('ty-mssg');
+
+  loginButton.onclick = () => {
+    const User = loginInput.value;
+    loginTool.style = "display:none";
+    tyMssg.innerHTML += User;
+    tyMssg.style = "display:block";
+
+    socket.emit('login', User);
+    main(socket);
+  }
+}
+
+function main(socket) {
+  console.log("Hola!!!!-------------")
+
 
   //-- Obtener los elementos de interfaz:
 
@@ -17,10 +34,8 @@ function main() {
 
   //-- Cuando se aprieta el botón de enviar...
   send.onclick = () => {
-
     //-- Enviar el mensaje, con el evento "new_message"
     socket.emit('new_message', msg.value);
-
     //-- Lo notificamos en la consola del navegador
     console.log("Mensaje emitido")
   }

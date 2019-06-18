@@ -3,6 +3,8 @@ var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 
+let users = [];
+
 // static files
 app.use('/static', express.static('static'));
 //--Servir la pagina principal
@@ -23,7 +25,12 @@ http.listen(3000, function(){
 //-- Evento: Nueva conexion recibida
 //-- Un nuevo cliente se ha conectado!
 io.on('connection', function(socket){
-  console.log('--> Usuario conectado!');
+
+  socket.on('login', data => {
+    users.push(data);
+    let serverMssg = `SERVER MESSAGE: ${data} is one of us now!!!`;
+    socket.broadcast.emit('new_message', serverMssg);
+  });
 
   //-- Detectar si el usuario se ha desconectado
   socket.on('disconnect', function(){

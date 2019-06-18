@@ -18,6 +18,7 @@ img{
   display: inline-table;
   table-layout: auto;
   font-family: 'Roboto', sans-serif;
+  color: orange;
 }
 .menu-col{
   width: 100%;
